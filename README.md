@@ -1,6 +1,6 @@
 
 
-# How does a transaction look
+# Show a OnChainTx
 
 * run `cabal update`
 * run `cabal build`
@@ -15,13 +15,13 @@
 ### changes in /pab/Main.hs    
 
 This gives us the whole blockchain. 
-chain <- Simulator.blockchain
+`chain <- Simulator.blockchain`
 
 Type Blockchain is just a list of blocks, we take the last one.   
-let block = last chain
+`let block = last chain`
 
 A block is just a list of OnChainTx and we take the first one.
-getOnTx = head block 
+`getOnTx = head block` 
 
 
 
