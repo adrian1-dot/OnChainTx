@@ -9,6 +9,7 @@
 {-# LANGUAGE TypeFamilies       #-}
 {-# LANGUAGE TypeOperators      #-}
 {-# LANGUAGE BlockArguments #-}
+{-# LANGUAGE ImportQualifiedPost #-}
 
 module Main(main, writeCostingScripts) where
 
@@ -16,7 +17,7 @@ import           Control.Monad                       (void)
 import           Control.Monad.Freer                 (interpret)
 import           Control.Monad.IO.Class              (MonadIO (..))
 import           Data.Aeson                          (FromJSON (..), ToJSON (..), genericToJSON, genericParseJSON
-                                                     , defaultOptions, Options(..))
+                                                     , defaultOptions, Options(..), encode, ToJSON)
 import           Data.Default                        (def)
 import qualified Data.OpenApi                        as OpenApi
 import           Data.Text.Prettyprint.Doc           (Pretty (..), viaShow)
@@ -32,8 +33,7 @@ import           Plutus.Trace.Emulator.Extract       (writeScriptsTo, ScriptsCon
 import           Ledger.Index                        (ValidatorMode(..))
 
 -- to print blockchain
-import Ledger.Blockchain (OnChainTx (..))
-
+import            Data.ByteString.Lazy qualified as LB
 
 main :: IO ()
 main = void $ Simulator.runSimulationWith handlers $ do
@@ -54,11 +54,19 @@ main = void $ Simulator.runSimulationWith handlers $ do
     -- last block 
     let block = last chain
         getOnTx = head block 
+    
+    
     -- log the last Tx 
-    Simulator.logString @(Builtin StarterContracts) (show getOnTx)
-
-
+    Simulator.logString @(Builtin StarterContracts) (show chain)
+    -- write blockchain to file
+    liftIO $ writeData "chain.json" chain
     shutdown
+
+writeData :: ToJSON a => FilePath -> a -> IO ()
+writeData file isData = do
+  print file
+  LB.writeFile file (encode isData)
+
 
 
 

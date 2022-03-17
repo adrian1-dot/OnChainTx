@@ -93,4 +93,7 @@ executable plutus-starter-pab
     freer-extras -any,
     plutus-ledger -any,
     openapi3 -any,
+    plutus-tx -any,
+    bytestring -any,
+    cardano-api -any
 

@@ -1,0 +1,143 @@
+[
+  {
+    "contents": {
+      "txData": [
+        [
+          "03e298fcd8533f4b70148113358474c3b33b6ae83a69406535dac5d6b11b5b91",
+          "5820e73b48f750be953532c1d1757b5ba081e8a6b0408ea8b4e65ef1e65631a7da06"
+        ]
+      ],
+      "txInputs": [
+        {
+          "txInType": {
+            "tag": "ConsumePublicKeyAddress"
+          },
+          "txInRef": {
+            "txOutRefIdx": 1,
+            "txOutRefId": {
+              "getTxId": "36238b38ef4c515f247459313f2f057263f25868df1fcf42ec72dd2335860b93"
+            }
+          }
+        }
+      ],
+      "txRedeemers": [],
+      "txOutputs": [
+        {
+          "txOutValue": {
+            "getValue": [
+              [
+                {
+                  "unCurrencySymbol": ""
+                },
+                [
+                  [
+                    {
+                      "unTokenName": ""
+                    },
+                    9999999900
+                  ]
+                ]
+              ]
+            ]
+          },
+          "txOutAddress": {
+            "addressStakingCredential": null,
+            "addressCredential": {
+              "contents": {
+                "getPubKeyHash": "06f4df4da14a6b991906c0aa308ac7000edc92d869229ffaf1f92eac"
+              },
+              "tag": "PubKeyCredential"
+            }
+          },
+          "txOutDatumHash": null
+        },
+        {
+          "txOutValue": {
+            "getValue": [
+              [
+                {
+                  "unCurrencySymbol": ""
+                },
+                [
+                  [
+                    {
+                      "unTokenName": ""
+                    },
+                    90
+                  ]
+                ]
+              ]
+            ]
+          },
+          "txOutAddress": {
+            "addressStakingCredential": null,
+            "addressCredential": {
+              "contents": "4049d3f75593d7e36c04850190de091b9991bdcb9a02c7d9dc179d18",
+              "tag": "ScriptCredential"
+            }
+          },
+          "txOutDatumHash": "03e298fcd8533f4b70148113358474c3b33b6ae83a69406535dac5d6b11b5b91"
+        }
+      ],
+      "txValidRange": {
+        "ivTo": [
+          {
+            "tag": "PosInf"
+          },
+          true
+        ],
+        "ivFrom": [
+          {
+            "tag": "NegInf"
+          },
+          true
+        ]
+      },
+      "txFee": {
+        "getValue": [
+          [
+            {
+              "unCurrencySymbol": ""
+            },
+            [
+              [
+                {
+                  "unTokenName": ""
+                },
+                10
+              ]
+            ]
+          ]
+        ]
+      },
+      "txMint": {
+        "getValue": []
+      },
+      "txCollateral": [
+        {
+          "txInType": {
+            "tag": "ConsumePublicKeyAddress"
+          },
+          "txInRef": {
+            "txOutRefIdx": 1,
+            "txOutRefId": {
+              "getTxId": "36238b38ef4c515f247459313f2f057263f25868df1fcf42ec72dd2335860b93"
+            }
+          }
+        }
+      ],
+      "txMintScripts": [],
+      "txSignatures": [
+        [
+          {
+            "getPubKey": "e2844963a966cb777356d9e3be2e1cbf321a8dd70fe4f63ba40209e303ed81ca"
+          },
+          {
+            "getSignature": "266208b6575a52c51eb2ad037a57dce3c34f281e9cfd709631975524cba250c56ca2ae364282172e77980444c351f5e26619bf6441421d356a168e1e18a63a0a"
+          }
+        ]
+      ]
+    },
+    "tag": "Valid"
+  }
+]
